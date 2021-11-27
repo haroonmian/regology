@@ -25,7 +25,7 @@ const Header: React.FC<Props> = ({
       />
     </Grid>
     <Grid container xs={2}>
-      <Stack spacing={2} sx={{ width: 300 }}>
+      <Stack spacing={2} sx={{ width: 300, paddingRight: "1rem" }}>
         <Autocomplete
           multiple
           id="tags-outlined"
@@ -42,7 +42,7 @@ const Header: React.FC<Props> = ({
       </Stack>
     </Grid>
     <Grid container xs={2}>
-      <Stack spacing={2} sx={{ width: 300 }}>
+      <Stack spacing={2} sx={{ width: 300, paddingRight: "1rem" }}>
         <Autocomplete
           multiple
           id="tags-outlined"

@@ -119,6 +119,7 @@ const reducer = (state: InitialStateType, actions: ActionType) => {
     case Action.CLEAR_FILER:
       return {
         ...state,
+        filteredcards: state.cards,
         filters: {
           search: "",
           epic: [],

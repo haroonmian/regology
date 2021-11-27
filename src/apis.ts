@@ -1,11 +1,16 @@
-export const cardApi = () => {
+import { CardType, StatusType } from "./types/Store";
+
+export const cardApi = (): Promise<CardType[]> => {
   return Promise.resolve([
       {
         id: 1,
         title: "Create Admin",
         description: "",
         type: 1,
-        status: 1,
+        status: {
+          id: 1,
+          label: "Todo"
+        },
         assignee: {
           id: 1,
           name: "Ali",
@@ -24,7 +29,10 @@ export const cardApi = () => {
         title: "Fix Header",
         description: "",
         type: 1,
-        status: 2,
+        status: {
+          id: 2,
+          label: "In Progress"
+        },
         assignee: {
           id: 2,
           name: "Devid",
@@ -41,18 +49,18 @@ export const cardApi = () => {
     ]);
 };
 
-export const getStatusApi = () => {
+export const getStatusApi = (): Promise<StatusType[]> => {
   return Promise.resolve([
       {
-        code: 1,
+        id: 1,
         label: "Todo"
       },
       {
-        code: 2,
+        id: 2,
         label: "In Progress"
       },
       {
-        code: 3,
+        id: 3,
         label: "Done"
       }
     ]);

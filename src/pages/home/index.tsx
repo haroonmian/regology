@@ -32,7 +32,7 @@ const Home: React.FC<Props> = () => {
         />
       </Grid>
       <Grid container xs={12}>
-        <Board cards={state.cards} statuses={state.statuses} />
+        <Board cards={state.filteredcards} statuses={state.statuses} />
       </Grid>
     </Container>
   );

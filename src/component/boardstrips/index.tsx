@@ -1,11 +1,11 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import BoardCard from "../card";
-import type { CardType, StatusesType } from "../../types/Store";
+import type { CardType, StatusType } from "../../types/Store";
 
 interface Props {
     cards: CardType[],
-    status: StatusesType
+    status: StatusType
 }
 
 const BoardStrips: React.FC<Props> = ({ cards, status }) => {
@@ -14,12 +14,17 @@ const BoardStrips: React.FC<Props> = ({ cards, status }) => {
       {status.label}
       <Grid
         height="550px"
+        minWidth="300px"
         margin="0 1rem 0 0"
         xs="auto"
         style={{ background: "rgb(244, 245, 247)" }}
         container
       >
-        <BoardCard {...cards} />
+        {cards.map((card: CardType, index) =>
+          card.status.id === status.id ? (
+            <BoardCard key={index} {...card} />
+          ) : null
+        )}
       </Grid>
     </label>
   );

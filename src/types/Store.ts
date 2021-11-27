@@ -10,19 +10,8 @@ export interface Assignee {
 export interface Reporter extends Assignee {}
 
 export interface Epic {
-  id: 1;
-  title: "";
-}
-
-export interface CardType {
-  id: number
-  title: string
-  description: string
-  type: number
-  status: number
-  assignee: Assignee
-  reporter: Reporter
-  epic: Epic
+  id: number;
+  title: string;
 }
 
 export interface Filters {
@@ -31,14 +20,25 @@ export interface Filters {
   assignee: Assignee[]
 }
 
-export interface StatusesType {
-  code: number,
+export interface StatusType {
+  id: number,
   label: string
+}
+
+export interface CardType {
+  id: number
+  title: string
+  description: string
+  type: number
+  status: StatusType
+  assignee: Assignee
+  reporter: Reporter
+  epic: Epic
 }
 
 export interface InitialStateType {
   cards: CardType[]
-  statuses: StatusesType[]
+  statuses: StatusType[]
   filteredcards: CardType[]
   filters: Filters
   epicOptions: Epic[]
